@@ -12,7 +12,7 @@
         android:id="@+id/textView"
         android:layout_width="248dp"
         android:layout_height="41dp"
-        android:layout_marginBottom="164dp"
+        android:layout_marginBottom="14dp"
         android:text="@string/greetingsLbl"
         app:layout_constraintBottom_toTopOf="@+id/container_top"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,7 +27,7 @@
         android:background="@drawable/bg1"
         app:cardCornerRadius="12dp"
         app:cardElevation="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/container_top"
+        app:layout_constraintBottom_toTopOf="@+id/container_top2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
@@ -131,7 +131,7 @@
         app:menu="@menu/bottom_nav_menu" />
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/container_top"
+        android:id="@+id/container_top2"
         android:layout_width="343dp"
         android:layout_height="126dp"
         android:layout_marginBottom="20dp"
