@@ -2,4 +2,21 @@
     <string name="app_name">Pulih</string>
     <string name="greetingsLbl">Hello Nai! \nHow can we help you today?</string>
     <string name="get_help_now">Get help now!</string>
+    <string name="needHeard_lbl">Need to feel heard? Try our AI Chat</string>
+    <string name="let_s_begin">Let\'s begin</string>
+    <string name="i_need_help_to_manage_my_emotions">I need help to manage my emotions</string>
+    <string name="todo">TODO</string>
+    <string name="image2">image2</string>
+    <string name="profilepicture">profilePicture</string>
+    <string name="hello_nai_how_can_we_help_you_today">Hello Nai! How can we help you today?</string>
+    <string name="need_help">Need help?</string>
+    <string name="image1">image1</string>
+    <string name="home">Home</string>
+    <string name="therapist">Therapist</string>
+    <string name="self_care">Self-Care</string>
+    <string name="journal">Journal</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">forgot_password</string>
+    <string name="login">Login</string>
 </resources>

@@ -2,6 +2,7 @@ package com.nai.pulih;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,11 +22,14 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        findViewById(R.id.button).setOnClickListener(view -> {
+            Toast.makeText(this, "Send Message clicked!", Toast.LENGTH_SHORT).show();
+        });
     }
 
-    public void sendMessage(View view)
-    {
-        System.out.println("=== HELLO WORLD!!");
-    }
+//    public void sendMessage(View view) {
+//        Toast.makeText(this, "Send Message clicked!", Toast.LENGTH_SHORT).show();
+//    }
 
 }

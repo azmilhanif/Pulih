@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.nai.pulih"
-        minSdk 30
+        minSdk 22
         //noinspection OldTargetApi
         targetSdk 35
         versionCode 1
@@ -35,10 +35,10 @@ dependencies {
     implementation libs.material
     implementation libs.activity
     implementation libs.constraintlayout
-    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation libs.cardview
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
-    implementation 'com.google.android.material:material:1.12.0'
+//    implementation 'com.google.android.material:material:1.12.0'
 
 }
