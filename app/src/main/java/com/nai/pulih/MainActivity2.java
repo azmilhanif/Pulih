@@ -22,29 +22,29 @@ public class MainActivity2 extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int id = item.getItemId();
-
-                if (id == R.id.nav_home) {
-                    // Navigate to MainActivity
-                    Intent intent = new Intent(MainActivity2.this, MainActivity.class);
-                    startActivity(intent);
-                    return true;
-                } else if (id == R.id.nav_therapist) {
-                    Toast.makeText(MainActivity2.this, "Therapist clicked", Toast.LENGTH_SHORT).show();
-                    return true;
-                } else if (id == R.id.nav_selfcare) {
-                    Toast.makeText(MainActivity2.this, "Self Care clicked", Toast.LENGTH_SHORT).show();
-                    return true;
-                } else if (id == R.id.nav_journal) {
-                    Toast.makeText(MainActivity2.this, "Journal clicked", Toast.LENGTH_SHORT).show();
-                    return true;
-                }
-
-                return false;
-            }
-        });
+//        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+//            @Override
+//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//                int id = item.getItemId();
+//
+//                if (id == R.id.nav_home) {
+//                    // Navigate to MainActivity
+//                    Intent intent = new Intent(MainActivity2.this, MainActivity.class);
+//                    startActivity(intent);
+//                    return true;
+//                } else if (id == R.id.nav_therapist) {
+//                    Toast.makeText(MainActivity2.this, "Therapist clicked", Toast.LENGTH_SHORT).show();
+//                    return true;
+//                } else if (id == R.id.nav_selfcare) {
+//                    Toast.makeText(MainActivity2.this, "Self Care clicked", Toast.LENGTH_SHORT).show();
+//                    return true;
+//                } else if (id == R.id.nav_journal) {
+//                    Toast.makeText(MainActivity2.this, "Journal clicked", Toast.LENGTH_SHORT).show();
+//                    return true;
+//                }
+//
+//                return false;
+//            }
+//        });
     }
 }
