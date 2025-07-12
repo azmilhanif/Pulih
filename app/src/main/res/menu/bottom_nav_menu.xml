@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
     <item
         android:id="@+id/nav_home"
         android:icon="@android:drawable/ic_menu_view"
         android:title="Home" />
 
     <item
-        android:id="@+id/nav_profile"
+        android:id="@+id/nav_therapist"
         android:icon="@android:drawable/ic_menu_myplaces"
-        android:title="Profile" />
+        android:title="Therapist" />
 
     <item
-        android:id="@+id/nav_settings"
+        android:id="@+id/nav_selfcare"
+        android:icon="@android:drawable/ic_menu_myplaces"
+        android:title="Self Care" />
+
+    <item
+        android:id="@+id/nav_journal"
         android:icon="@android:drawable/ic_menu_preferences"
-        android:title="Settings" />
-
-
+        android:title="Journal" />
 </menu>

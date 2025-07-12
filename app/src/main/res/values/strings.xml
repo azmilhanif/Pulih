@@ -2,5 +2,9 @@
     <string name="app_name">Pulih</string>
     <string name="greetingsLbl">Hello Nai! \nHow can we help you today?</string>
     <string name="get_help_now">Get help now!</string>
-    <string name="container_1">Container 1</string>
+    <string name="container_1">Need to feel heard? Try our AI Chat</string>
+    <string name="navTitle_home">Home</string>
+    <string name="navTitle_therapist">Therapist</string>
+    <string name="navTitle_self_care">Self-care</string>
+    <string name="navTitle_Journal">Journal</string>
 </resources>
