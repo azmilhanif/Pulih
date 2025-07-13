@@ -9,7 +9,6 @@ android {
     defaultConfig {
         applicationId "com.nai.pulih"
         minSdk 22
-        //noinspection OldTargetApi
         targetSdk 35
         versionCode 1
         versionName "1.0"
@@ -23,9 +22,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
+        coreLibraryDesugaringEnabled true
+    }
+
+    packagingOptions {
+        pickFirst 'META-INF/INDEX.LIST'
+        pickFirst 'META-INF/DEPENDENCIES'
+        pickFirst 'META-INF/LICENSE'
+        pickFirst 'META-INF/LICENSE.txt'
+        pickFirst 'META-INF/NOTICE'
+        pickFirst 'META-INF/NOTICE.txt'
+        // Add other duplicates if needed
     }
 }
 
@@ -36,9 +47,35 @@ dependencies {
     implementation libs.activity
     implementation libs.constraintlayout
     implementation libs.cardview
+
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
-//    implementation 'com.google.android.material:material:1.12.0'
 
+    // Remove full Dialogflow Java SDK - it's not optimized for Android:
+    // implementation 'com.google.cloud:google-cloud-dialogflow:4.8.0'
+    // Instead, use REST calls or your own client if needed
+
+    // Use Google Auth library compatible with Android (newer version)
+    implementation 'com.google.auth:google-auth-library-oauth2-http:1.21.0' // updated
+
+    // Use Guava Android version for compatibility
+    implementation 'com.google.guava:guava:31.1-android'
+
+    // Use gRPC Android artifacts (compatible with Android runtime)
+    implementation 'io.grpc:grpc-okhttp:1.56.0'
+    implementation 'io.grpc:grpc-protobuf-lite:1.56.0'
+    implementation 'io.grpc:grpc-stub:1.56.0'
+    implementation 'com.google.api:gax:2.12.0'
+    implementation 'com.google.auth:google-auth-library-oauth2-http:1.21.0' // updated for Android
+    implementation 'com.google.guava:guava:31.1-android' // Guava Android version
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.3'
+
+
+
+    // For desugaring Java 8+ APIs
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.3'
 }

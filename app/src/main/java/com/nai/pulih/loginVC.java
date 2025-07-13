@@ -29,15 +29,17 @@ public class loginVC extends AppCompatActivity {
         EditText passwordEditText = findViewById(R.id.passwordEditText);
         Button loginButton = findViewById(R.id.loginButton);
 
+        if (fileSystem.skipLogin) {
+            System.out.println("=== skipLogin is true");
+            goToHome();
+        }
+
         loginButton.setOnClickListener(view -> {
             String username = usernameEditText.getText().toString().trim();
             String password = passwordEditText.getText().toString().trim();
 
             if (username.equals("nai") && password.equals("1234")) {
-                // Login successful, go to MainActivity
-                Intent intent = new Intent(loginVC.this, MainActivity.class);
-                startActivity(intent);
-                finish(); // optional: close login screen
+                goToHome();
             } else {
                 Toast.makeText(this, "Invalid credentials", Toast.LENGTH_SHORT).show();
             }
@@ -45,5 +47,12 @@ public class loginVC extends AppCompatActivity {
 
 
 
+    }
+
+    public void goToHome() {
+        // Login successful, go to MainActivity
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish(); // optional: close login screen
     }
 }

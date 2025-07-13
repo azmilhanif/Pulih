@@ -19,4 +19,7 @@
     <string name="password">Password</string>
     <string name="forgot_password">forgot_password</string>
     <string name="login">Login</string>
+    <string name="chatbot">ChatBot</string>
+    <string name="type_a_message">Type a message...</string>
+    <string name="send">Send</string>
 </resources>
