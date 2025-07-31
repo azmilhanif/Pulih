@@ -60,7 +60,9 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Self-care selected", Toast.LENGTH_SHORT).show();
                 return true;
             } else if (id == R.id.nav_Journal) {
-                Toast.makeText(this, "Journal selected", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, JournalActivity.class);
+                startActivity(intent);
+                overridePendingTransition(0,0);
                 return true;
             }
             return false;

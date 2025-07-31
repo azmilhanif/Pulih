@@ -6,14 +6,12 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import java.util.List;
-import java.util.ArrayList;
-
-
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.List;
+import java.util.ArrayList;
 
 public class chatWithAI extends AppCompatActivity {
 
@@ -26,9 +24,9 @@ public class chatWithAI extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_chat_with_ai);
 
+        // Set up chat UI
         promptTf = findViewById(R.id.messageInput);
         chatRecyclerView = findViewById(R.id.chatRecyclerView);
         chatRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -45,6 +43,30 @@ public class chatWithAI extends AppCompatActivity {
                 sendMessageToDialogflow(message);
             }
         });
+
+        // ✅ Bottom Navigation Setup
+        BottomNavigationView bottomNav = findViewById(R.id.bottomNavigationView);
+        bottomNav.setSelectedItemId(R.id.nav_therapist); // Highlight current tab
+
+        bottomNav.setOnItemSelectedListener(item -> {
+            int id = item.getItemId();
+            if (id == R.id.nav_home) {
+                startActivity(new Intent(chatWithAI.this, MainActivity.class));
+                overridePendingTransition(0, 0);
+                return true;
+            } else if (id == R.id.nav_Journal) {
+                startActivity(new Intent(chatWithAI.this, JournalActivity.class));
+                overridePendingTransition(0, 0);
+                return true;
+            } else if (id == R.id.nav_self_care) {
+                Toast.makeText(this, "Self-care selected", Toast.LENGTH_SHORT).show();
+                return true;
+            } else if (id == R.id.nav_therapist) {
+                // Already on this tab
+                return true;
+            }
+            return false;
+        });
     }
 
     private void addMessageToChat(String text, int sender) {
@@ -57,16 +79,12 @@ public class chatWithAI extends AppCompatActivity {
         dialogflowHelper.detectIntent(message, new DialogflowHelper.DialogflowCallback() {
             @Override
             public void onResponse(String responseText) {
-                runOnUiThread(() -> {
-                    addMessageToChat(responseText, Message.BOT);
-                });
+                runOnUiThread(() -> addMessageToChat(responseText, Message.BOT));
             }
 
             @Override
             public void onError(Exception e) {
-                runOnUiThread(() -> {
-                    addMessageToChat("Error: " + e.getMessage(), Message.BOT);
-                });
+                runOnUiThread(() -> addMessageToChat("Error: " + e.getMessage(), Message.BOT));
             }
         });
     }

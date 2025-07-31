@@ -22,4 +22,8 @@
     <string name="chatbot">ChatBot</string>
     <string name="type_a_message">Type a message...</string>
     <string name="send">Send</string>
+    <string name="write_your_thoughts">Write your thoughts...</string>
+    <string name="save_journal">Save Journal</string>
+    <string name="journal_title">Journal Title</string>
+    <string name="today_s_date">Today’s Date</string>
 </resources>

@@ -78,4 +78,8 @@ dependencies {
 
     // For desugaring Java 8+ APIs
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.3'
+
+    implementation "androidx.room:room-runtime:2.6.1"
+    annotationProcessor "androidx.room:room-compiler:2.6.1"
+
 }
